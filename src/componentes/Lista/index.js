@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Celda from "../Celda";
 import "./Lista.css";
 
-function Lista() {
+function Lista(props) {
     const [pokemon, setPokemon] = useState([]);
     const pokeAPILink = "";
 
@@ -23,7 +23,7 @@ function Lista() {
         <section className="lista">
            {pokemon.map((pokeClase, id) => {
                return(
-                   <Celda key={id} pokeClase={id} />
+                   <Celda key={id} pokeClase={id} handleOnClick={props.handleOnClick}/>
                )
            })}
         </section>
