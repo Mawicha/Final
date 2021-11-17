@@ -11,12 +11,12 @@ class App extends Component {
     this.handleOnClick = this.handleOnClick.bind(this);
   }
 
-  handleOnClick(id){
+  handleOnClick(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then(response => response.json())
     .then(data => {
       const pokemon = new Pokemon(data);
-      this.setState({pokemon});
+      this.setState({ pokemon });
     })
     .catch(err => console.log(err));
   }
@@ -24,8 +24,8 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-        <Lista handleOnClick={this.handleOnClick}/>
-        <VistaDetallada pokemon={this.state.pokemon}/>
+        <Lista handleOnClick={this.handleOnClick} />
+        <VistaDetallada pokemon={this.state.pokemon} />
       </div>
     );
   }

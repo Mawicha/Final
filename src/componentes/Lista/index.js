@@ -23,7 +23,7 @@ function Lista(props) {
         <section className="lista">
            {pokemon.map((pokeClase, id) => {
                return(
-                   <Celda key={id} pokeClase={id} handleOnClick={props.handleOnClick}/>
+                   <Celda key={id} pokeClase={id} handleOnClick={props.handleOnClick} />
                )
            })}
         </section>
