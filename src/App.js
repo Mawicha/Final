@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Lista, VistaDetallada, Pokemon } from "./componentes";
+import { Lista, VistaDetallada, Pokemon, Home } from "./componentes";
 
 class App extends Component {
   constructor() {
