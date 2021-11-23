@@ -37,33 +37,33 @@ function Lista(props) {
         getPokemon(); /* Llama a la función recien declarada anteriormente */
     }, [searchState]); /* Este efecto se va a realizar cada que haya cambios en el estado searchState, el que guarda el contenido de la barra de búsqueda */
 
-    function handleChange(event) {
-        const value = event.target.value;
-        setSearchState(value);
+    function handleChange(event) { /* Función para manejar cambios en la barra de búsqueda */
+        const value = event.target.value; /* Toma el valor que está en el objetivo del evento (en este caso el input de búsqueda) y lo guarda en una variable */
+        setSearchState(value); /* Inserta el valor tomado de la barra de búsqueda al estado searchState */
     }
 
-    function selectScreen() {
-        if(loadingState === "idle") {
+    function selectScreen() { /* Función que elige qué mostrar dependiendo del estado de carga del API, regresa los elementos a mostrar */
+        if(loadingState === "idle") { /* En caso de que no esté haciendo nada */
             return(
                 <section className="lista">
                     <h2>Idle</h2>
                 </section>  
             );
-        } else if (loadingState === "loading") {
+        } else if (loadingState === "loading") { /* Caso en el que está cargando */
             return(
                 <section className="lista">
                     <h2>Loading</h2>
                     <img width="200" alt="loadingIMG" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fe48665f-9fb2-4bc1-b2df-60d8fbdd82a0/dcyr9or-c77d5729-8279-4837-868c-8e664b50fe87.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ZlNDg2NjVmLTlmYjItNGJjMS1iMmRmLTYwZDhmYmRkODJhMFwvZGN5cjlvci1jNzdkNTcyOS04Mjc5LTQ4MzctODY4Yy04ZTY2NGI1MGZlODcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mP3DK2y0asEU6IZ9-LGszcgOsYHDttCnT3iWi6fHKfU"></img>
                 </section>  
             );
-        } else if (loadingState === "error") {
+        } else if (loadingState === "error") { /* Caso de error */
             return(
                 <section className="lista">
                     <h2>Error, please contact prof. Oak</h2>
                     <img width="200" alt="ErrorIMG" src="https://i.gifer.com/Kjh4.gif"></img>
                 </section>  
             );
-        } else if (loadingState === "complete" && searchState === "") {
+        } else if (loadingState === "complete" && searchState === "") { /* Caso completo, con la barra de búsqueda vacía, muestra el listado completo de Pokémon, creando una celda por cada elemento del arreglo utilizando map */
             return(
                 <section className="lista">
                     {pokemon.map((pokeClase, id) => {
@@ -73,7 +73,7 @@ function Lista(props) {
                     })}
                 </section>
             );
-        } else if (loadingState === "complete" && searchState !== "") {
+        } else if (loadingState === "complete" && searchState !== "") { /* Caso completo, con la barra de búsqueda llena, muestra al Pokémon que se haya encontrado */
             return(
                 <section className="lista">
                     <Celda key={pokemon.id - 1} pokeClase={pokemon.id - 1} handleOnClick={props.handleOnClick} />
@@ -85,15 +85,15 @@ function Lista(props) {
     return(
         <React.Fragment>
             <div>
-                <input
+                <input /* Input para la barra de búsqueda */
                     className="search"
                     name="Search Pokemon"
                     placeholder="Search Pokémon..."
-                    value={searchState}
-                    onChange={handleChange}
+                    value={searchState} /* Vincula el input con el estado searchState, lo que se encuentre en ese estado estará aquí */
+                    onChange={handleChange} /* En el caso onChange (cada que haya un cambio), llama a la función handleChange que inserta el texto en el estado searchState */
                 />
             </div>
-            {selectScreen()}
+            {selectScreen()} {/* Se manda a llamar la función que escoge qué mostrar dependiendo del estado de cargando */}
         </React.Fragment>
     );
 }
