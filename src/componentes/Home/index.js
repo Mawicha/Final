@@ -7,7 +7,6 @@ function Home() {
         <div className="Home">
             <img src={Homeimg} alt="HomeImg" />
         </div>
-        //<Link><Button>Boton</Button></Link>
     );
 }
 
