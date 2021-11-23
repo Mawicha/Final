@@ -12,7 +12,6 @@ function Lista(props) {
             try {
                 const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
                 const data = await response.json();
-                console.log(data.results);
                 const listaPokemon = data.results
                     .slice(0, data.results.length)
                     .map(items => items)
@@ -21,7 +20,6 @@ function Lista(props) {
                 setLoadingState("complete");
             } catch(error) {
                 setLoadingState("error");
-                console.log(error);
             }
         }
         getPokemon();
