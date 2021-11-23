@@ -18,10 +18,16 @@ function Lista(props) {
                     response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchState}`);
                 }
                 const data = await response.json(); /* En esta línea se toma la respuesta del API y es leída por completo y su crea un objeto de JavaScript, se usa await porque el return es de tipo promesa también */
-                const listaPokemon = data.results /* data es un objeto, para acceder a los resultados de la búsqueda del API, se debe acceder a la propiedad results de este objeto data, el resultado es asignado a listaPokemon, pero antes hay otras funciones por realizar en las siguientes líneas */
-                    .slice(0, data.results.length) /* Corta el arreglo que devuelve data.results desde el índice 0 hasta el último en su tamaño, en este caso 151, el último (151) no se incluye en el arreglo resultante, el original no se modifica, solo se crea uno nuevo */
-                    .map(items => items) /* Mapea los elementos del arreglo para recordar sus posiciones originales */
-                    .flat(); /* Se crea una nueva matriz con todos los elementos de los sub-arreglos concatenados */
+                let listaPokemon;
+                if (searchState === ""){
+                    listaPokemon = data.results /* data es un objeto, para acceder a los resultados de la búsqueda del API, se debe acceder a la propiedad results de este objeto data, el resultado es asignado a listaPokemon, pero antes hay otras funciones por realizar en las siguientes líneas */
+                        .slice(0, data.results.length) /* Corta el arreglo que devuelve data.results desde el índice 0 hasta el último en su tamaño, en este caso 151, el último (151) no se incluye en el arreglo resultante, el original no se modifica, solo se crea uno nuevo */
+                        .map(items => items) /* Mapea los elementos del arreglo para recordar sus posiciones originales */
+                        .flat(); /* Se crea una nueva matriz con todos los elementos de los sub-arreglos concatenados */
+                } else {
+                    listaPokemon = data;
+                }
+                
                 setPokemon(listaPokemon);
                 setLoadingState("complete");
             } catch(error) {
@@ -55,7 +61,7 @@ function Lista(props) {
                     <h2>Error</h2>
                 </section>  
             );
-        } else if (loadingState === "complete") {
+        } else if (loadingState === "complete" && searchState === "") {
             return(
                 <section className="lista">
                     {pokemon.map((pokeClase, id) => {
@@ -65,8 +71,12 @@ function Lista(props) {
                     })}
                 </section>
             );
-        } else {
-            return(<h2>Empty</h2>);
+        } else if (loadingState === "complete" && searchState !== "") {
+            return(
+                <section className="lista">
+                            <Celda key={pokemon.id - 1} pokeClase={pokemon.id - 1} handleOnClick={props.handleOnClick} />
+                </section>
+            );
         }
     }
 
