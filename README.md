@@ -23,6 +23,7 @@ Son visibles las características de cada pokémon seleccionado
 ### Mensajes de estado (Error/Loading)
 Error aparece al haber algún error con la conexión a la API
 Loading aparece al procesar las llamadas a la API como cuando se hace la busqueda de un pokemon
+
 ![image](https://user-images.githubusercontent.com/36935788/143145758-0c50a5bf-38ed-4784-b872-6738cbce2e62.png)
 
 ### Diseño responsivo
