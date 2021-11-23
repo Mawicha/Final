@@ -4,7 +4,6 @@ import "./Lista.css";
 
 function Lista(props) {
     const [pokemon, setPokemon] = useState([]);
-    const pokeAPILink = "";
 
     useEffect(() => {
         const getPokemon = async() => {
