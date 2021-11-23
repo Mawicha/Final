@@ -53,12 +53,14 @@ function Lista(props) {
             return(
                 <section className="lista">
                     <h2>Loading</h2>
+                    <img width="200" alt="loadingIMG" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fe48665f-9fb2-4bc1-b2df-60d8fbdd82a0/dcyr9or-c77d5729-8279-4837-868c-8e664b50fe87.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ZlNDg2NjVmLTlmYjItNGJjMS1iMmRmLTYwZDhmYmRkODJhMFwvZGN5cjlvci1jNzdkNTcyOS04Mjc5LTQ4MzctODY4Yy04ZTY2NGI1MGZlODcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mP3DK2y0asEU6IZ9-LGszcgOsYHDttCnT3iWi6fHKfU"></img>
                 </section>  
             );
         } else if (loadingState === "error") {
             return(
                 <section className="lista">
-                    <h2>Error</h2>
+                    <h2>Error, please contact prof. Oak</h2>
+                    <img width="200" alt="ErrorIMG" src="https://i.gifer.com/Kjh4.gif"></img>
                 </section>  
             );
         } else if (loadingState === "complete" && searchState === "") {
@@ -74,7 +76,7 @@ function Lista(props) {
         } else if (loadingState === "complete" && searchState !== "") {
             return(
                 <section className="lista">
-                            <Celda key={pokemon.id - 1} pokeClase={pokemon.id - 1} handleOnClick={props.handleOnClick} />
+                    <Celda key={pokemon.id - 1} pokeClase={pokemon.id - 1} handleOnClick={props.handleOnClick} />
                 </section>
             );
         }
