@@ -62,7 +62,7 @@ function Lista(props) {
     return(
         <React.Fragment>
             <div>
-                <input />
+                <input className="search"/>
             </div>
             {selectScreen()}
         </React.Fragment>

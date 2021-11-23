@@ -13,6 +13,49 @@
 
 }
 
+@media(min-width: 360px){
+    .search{
+        position: relative;
+        top: 170px;
+        left: 0px;
+    }
+    .lista {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 55%;
+        height: 0px;
+        padding-bottom: 130px;
+        margin-right: 0px;
+        background-color: #a2d7d5;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        overflow-x: auto;
+    }
+}
+
+@media(min-width: 576px){
+    .search{
+        position: fixed;
+        top: 10vh;
+        left: 19vw;
+    }
+    .lista {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        height: 80%;
+        padding: 10px;
+        margin-right: 10px;
+        background-color: #a2d7d5;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        overflow-x: auto;
+    }
+}
+
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
