@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     width: 90%;
-    height: 500px;
+    height: 550px;
     padding-left: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -17,14 +17,14 @@
   }
 }
 
-@media (min-width: 500px){
+@media (min-width: 576px){
   .App {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 90%;
-    height: 400px;
+    height: 550px;
     padding-left: 20px;
     padding-right: 20px;
     margin: 50px auto;
@@ -45,4 +45,6 @@
   background-color:black;
   font-size:x-large;
   font-family: monospace;
+  padding: 5px;
+  margin-bottom: 10px;
 }

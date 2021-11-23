@@ -1,10 +1,31 @@
-.celda {
-    width: 110px;
-    height: 110px;
-    margin: 10px;
-    background-color: white;
-    background-repeat: no-repeat;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+@media (min-width: 360px){
+    .Home {
+        width: 60%;
+        height: 110px;
+        margin-top: 100px;
+        display: flex;
+        flex: column;
+        
+        justify-content: flex-end;
+        background-repeat: no-repeat;
+        border: none;
+        border-radius: 5px;
+        
+    }    
+}
+
+@media (min-width: 576px){
+    .Home {
+        width: 4%;
+        height: 110px;
+        margin-top: 200px;
+        display: flex;
+        flex: column;
+        align-items: center;
+        justify-content: flex-end;
+        background-repeat: no-repeat;
+        border: none;
+        border-radius: 5px;
+        
+    }    
 }
