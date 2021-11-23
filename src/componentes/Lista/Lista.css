@@ -18,6 +18,9 @@
         position: relative;
         top: 170px;
         left: 0px;
+        border-radius: 5px;
+        border-width: 5px;
+        border-color: #A40000;
     }
     .lista {
         display: flex;
