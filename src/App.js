@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Lista, VistaDetallada, Pokemon, Home } from "./componentes";
+import { Route } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -24,8 +25,9 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-        <Lista handleOnClick={this.handleOnClick} />
-        <VistaDetallada pokemon={this.state.pokemon} />
+        <Route exact path="/" render={() => <Home/> } /> 
+        <Route path="/pokedex" render={() => <Lista handleOnClick={this.handleOnClick} /> }  />
+        <Route path="/pokedex" render={() => <VistaDetallada pokemon={this.state.pokemon} /> } />
       </div>
     );
   }
