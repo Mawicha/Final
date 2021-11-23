@@ -34,3 +34,15 @@
   }
 }
 
+.Active {
+  font-weight: bolder;
+  color: #00CB2B;
+}
+
+.btn {
+  border-radius: 10px;
+  border-color: crimson;
+  background-color:black;
+  font-size:x-large;
+  font-family: monospace;
+}

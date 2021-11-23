@@ -1,9 +1,13 @@
 import React from "react";
 import "./Home.css";
+import Homeimg from './Homeimg.png'
 
 function Home() {
     return(
-        <h1>Home</h1>
+        <div className="Home">
+            <img src={Homeimg} />
+        </div>
+        //<Link><Button>Boton</Button></Link>
     );
 }
 
