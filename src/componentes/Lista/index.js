@@ -68,7 +68,7 @@ function Lista(props) {
                 <section className="lista">
                     {pokemon.map((pokeClase, id) => {
                         return(
-                            <Celda key={id} pokeClase={id} handleOnClick={props.handleOnClick} />
+                            <Celda key={id} pokeClase={id} handleOnClick={props.handleOnClick} /> /* A la celda se le debe pasar la función para manejar el click, esta función viene desde App.js como prop cuando se llamó al componente Lista ahí */
                         )
                     })}
                 </section>
@@ -76,7 +76,7 @@ function Lista(props) {
         } else if (loadingState === "complete" && searchState !== "") { /* Caso completo, con la barra de búsqueda llena, muestra al Pokémon que se haya encontrado */
             return(
                 <section className="lista">
-                    <Celda key={pokemon.id - 1} pokeClase={pokemon.id - 1} handleOnClick={props.handleOnClick} />
+                    <Celda key={pokemon.id - 1} pokeClase={pokemon.id - 1} handleOnClick={props.handleOnClick} /> 
                 </section>
             );
         }
