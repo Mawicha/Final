@@ -62,7 +62,12 @@ function Lista(props) {
     }
 
     return(
-        selectScreen()
+        <React.Fragment>
+            <div>
+                <input />
+            </div>
+            {selectScreen()}
+        </React.Fragment>
     );
 }
 
